@@ -17,6 +17,7 @@ let server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(3000, 'localhost', () => {
-    console.log('Server running at http://localhost:3000/');
+let PORT = process.env.PORT || 3000;
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running at ${PORT}`);
 });

@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function App() {
   let [device, setDevice] = useState<string>('none');
   let clicked = async () => {
-    let res = await fetch('http://localhost:3000');
+    let res = await fetch('/api/device');
     let data: {
       "mobile": string | null,
       "tablet": string | null,
