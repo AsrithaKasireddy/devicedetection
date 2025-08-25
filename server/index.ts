@@ -4,7 +4,7 @@ let server = http.createServer(async (req, res) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type,User-Agent');
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS,PUT,PATCH,DELETE');
-    if(req.method === 'GET')
+    if(req.url === '/api/device' && req.method === 'GET')
     {   
         const md = new MobileDetect(req.userAgent);
         const isSystem = !md.mobile() && !md.tablet();
